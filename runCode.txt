@@ -1,0 +1,10 @@
+# source functions
+source("cachematrix.R")
+# create 2x2 test matrix
+A <- matrix(c(2, 4, 3, 1),nrow=2,ncol=2) 
+# "extend" test matrix with our function
+B <- makeCacheMatrix(A)
+# find inverse matrix (inversion is computed here)
+C <- cacheSolve(B)
+# find inverse matrix again (inversion is NOT compute, but taken from memory)
+D <- cacheSolve(B)
